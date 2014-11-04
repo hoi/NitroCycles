@@ -1,4 +1,6 @@
-This is your new Play application
-=================================
-
-This file will be packaged with your application, when using `activator dist`.
+Nitro Cycles
+======
+1. User is trying to track parts for his custom motorbike project based on a list of parts
+2. A user should be able to upload a list of parts and see matches against part suppliers as they come in and get a percentage of completion and total price quote for the bike. If there are multiple matches, the user can pick a preferred one. Also, the user can go back to a part choice and replace with another one. Also, a part can be marked as purchased or as part of wish list
+3. User should be able to save a list of parts and their state under a project
+4. User should be able to switch between projects
