@@ -3,7 +3,36 @@
 # ~~~~
 
 # Home page
-GET         /                    controllers.Application.index()
+GET           /                                        controllers.Application.index()
+
+# Projects API
+GET           /projects                                controllers.Projects.index()
+GET           /projects/:id                            controllers.Projects.show(id: Integer)
+GET           /projects/:id/project_parts              controllers.ProjectParts.indexByProjectId(id: Integer)
+POST          /projects                                controllers.Projects.create()
+PUT           /projects/:id                            controllers.Projects.update(id: Integer)
+DELETE        /projects/:id                            controllers.Projects.delete(id: Integer)
+
+# ProjectParts API
+GET           /project_parts                           controllers.ProjectParts.index()
+GET           /project_parts/:id                       controllers.ProjectParts.show(id: Integer)
+POST          /project_parts                           controllers.ProjectParts.create()
+PUT           /project_parts/:id                       controllers.ProjectParts.update(id: Integer)
+DELETE        /project_parts/:id                       controllers.ProjectParts.delete(id: Integer)
+
+# Parts API
+GET           /parts                                   controllers.Parts.index()
+GET           /parts/:id                               controllers.Parts.show(id: Integer)
+POST          /parts                                   controllers.Parts.create()
+PUT           /parts/:id                               controllers.Parts.update(id: Integer)
+DELETE        /parts/:id                               controllers.Parts.delete(id: Integer)
+
+# Vendors API
+GET           /vendors                                 controllers.Vendors.index()
+GET           /vendors/:id                             controllers.Vendors.show(id: Integer)
+POST          /vendors                                 controllers.Vendors.create()
+PUT           /vendors/:id                             controllers.Vendors.update(id: Integer)
+DELETE        /vendors/:id                             controllers.Vendors.delete(id: Integer)
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file        controllers.Assets.at(path="/public", file)
+GET           /assets/*file             controllers.Assets.at(path="/public", file)
