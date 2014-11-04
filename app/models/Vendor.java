@@ -14,6 +14,10 @@ public class Vendor extends Model {
     public String name;
     public String url;
 
-    @OneToMany
-    public Part parts;
+    public static Finder<Integer, Vendor> find = new Model.Finder(Integer.class, Vendor.class);
+
+    public void updateDetails(Vendor vendor) {
+        this.name = vendor.name;
+        this.url = vendor.url;
+    }
 }

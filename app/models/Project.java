@@ -17,6 +17,12 @@ public class Project extends Model {
     public String name;
     public Float completed;
     public Float price;
-    @OneToMany
-    List<ProjectPart> project_parts = new ArrayList<ProjectPart>();
+
+    public static Finder<Integer, Project> find = new Model.Finder(Integer.class, Project.class);
+
+    public void updateDetails(Project project) {
+        this.name = project.name;
+        this.completed = project.completed;
+        this.price = project.price;
+    }
 }

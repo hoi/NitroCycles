@@ -22,9 +22,9 @@ create table project (
 
 create table project_part (
   id                        integer not null,
+  state                     varchar(255),
   project_id                integer,
   part_id                   integer,
-  state                     varchar(255),
   constraint pk_project_part primary key (id))
 ;
 
