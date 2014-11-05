@@ -1,0 +1,131 @@
+#Vendors
+vendors:
+    - !!models.Vendor
+        name: Bike Bandit
+        url: http://www.bikebandit.com/
+    - !!models.Vendor
+        name: MotoSport
+        url: http://www.motosport.com/
+
+#Parts
+parts:
+    - !!models.Part
+        name: WINDSHIELD
+        part_number: 3114333
+        price: 76.26
+        vendor:
+          id: 1
+    - !!models.Part
+        name: DAMPER
+        part_number: 3114706
+        price: 1.37
+        vendor:
+          id: 1
+    - !!models.Part
+        name: COVER,TANK,LH
+        part_number: 3114167
+        price: 49.30
+        vendor:
+          id: 1
+    - !!models.Part
+        name: COVER,TANK,RH
+        part_number: 3114168
+        price: 49.30
+        vendor:
+          id: 1
+    - !!models.Part
+        name: COVER,METER
+        part_number: 3114166
+        price: 249.47
+        vendor:
+          id: 1
+    - !!models.Part
+        name: SWITCH,CLUTCH
+        part_number: 3114231
+        price: 25.81
+        vendor:
+          id: 1
+    - !!models.Part
+        name: GRIP,HANDLE,LH
+        part_number: 2969467
+        price: 14.43
+        vendor:
+          id: 1
+    - !!models.Part
+        name: GRIP,HANDLE,RH
+        part_number: 2969468
+        price: 14.43
+        vendor:
+          id: 1
+    - !!models.Part
+        name: DAMPER,CHANGE PEDAL
+        part_number: 3114705
+        price: 2.44
+        vendor:
+          id: 1
+    - !!models.Part
+        name: FUSE,MINI BLADE,15A,B
+        part_number: 794010
+        price: 4.49
+        vendor:
+          id: 1
+    - !!models.Part
+        name: WINDSHIELD
+        part_number: 3114333
+        price: 76.26
+        vendor:
+          id: 2
+    - !!models.Part
+        name: DAMPER
+        part_number: 3114706
+        price: 1.37
+        vendor:
+          id: 2
+    - !!models.Part
+        name: COVER,TANK,LH
+        part_number: 3114167
+        price: 49.30
+        vendor:
+          id: 2
+    - !!models.Part
+        name: COVER,TANK,RH
+        part_number: 3114168
+        price: 49.30
+        vendor:
+          id: 2
+    - !!models.Part
+        name: COVER,METER
+        part_number: 3114166
+        price: 249.47
+        vendor:
+          id: 2
+    - !!models.Part
+        name: SWITCH,CLUTCH
+        part_number: 3114231
+        price: 25.81
+        vendor:
+          id: 2
+    - !!models.Part
+        name: HUB-CLUTCH
+        part_number: 3114124
+        price: 101.96
+        vendor:
+          id: 2
+    - !!models.Part
+        name: GEAR,OILPUMP DRIVE,38
+        part_number: 2593685
+        price: 89.59
+        vendor:
+          id: 2
+    - !!models.Part
+        name: PIPE-FORK INNER
+        part_number: 3114379
+        price: 203.62
+        vendor:
+          id: 2
+    - !!models.Part
+        name: HOLDER-FORK UPPER,BLA
+        part_number: 2402912
+        price: 209.40
+        vendor:
+          id: 2
