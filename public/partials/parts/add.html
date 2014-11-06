@@ -1,0 +1,28 @@
+<h2>Parts</h2>
+
+<div ng-if="partsList.length == 0">Sorry, there are no parts to add.</div>
+<div class="table-responsive" ng-if="partsList.length > 0">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Vendor</th>
+                <th>Part Number</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="part in partsList">
+                <td><input type="checkbox" ng-model="selected[part.id]"></td>
+                <td>{{part.name}}</td>
+                <td><a href="{{part.vendor.url}}" target="_blank">{{part.vendor.name}}</a></td>
+                <td>{{part.part_number}}</td>
+                <td>${{part.price}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="form-group">
+        <button class="btn btn-default btn-primary" ng-click="submitProject()">Submit</button>
+    </div>
+</div>

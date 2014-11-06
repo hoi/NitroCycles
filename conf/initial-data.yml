@@ -129,3 +129,101 @@ parts:
         price: 209.40
         vendor:
           id: 2
+
+#Projects
+projects:
+    - !!models.Project
+        name: Kawasaki Ninja 250
+        completed: .333333
+        price:  696.36
+    - !!models.Project
+        name: Yamaha YZF R1
+        completed: .25000000
+        price:  711.11
+
+#ProjectParts
+project_parts:
+    - !!models.ProjectPart
+        state: new
+        part:
+          id: 3
+        project:
+          id: 1
+    - !!models.ProjectPart
+        state: ordered
+        part:
+          id: 4
+        project:
+          id: 1
+    - !!models.ProjectPart
+        state: arrived
+        part:
+          id: 5
+        project:
+          id: 1
+    - !!models.ProjectPart
+        state: installed
+        part:
+          id: 14
+        project:
+          id: 1
+    - !!models.ProjectPart
+        state: new
+        part:
+          id: 18
+        project:
+          id: 1
+    - !!models.ProjectPart
+        state: installed
+        part:
+          id: 20
+        project:
+          id: 1
+    - !!models.ProjectPart
+        state: new
+        part:
+          id: 17
+        project:
+          id: 2
+    - !!models.ProjectPart
+        state: ordered
+        part:
+          id: 7
+        project:
+          id: 2
+    - !!models.ProjectPart
+        state: arrived
+        part:
+          id: 5
+        project:
+          id: 2
+    - !!models.ProjectPart
+        state: installed
+        part:
+          id: 19
+        project:
+          id: 2
+    - !!models.ProjectPart
+        state: new
+        part:
+          id: 12
+        project:
+          id: 2
+    - !!models.ProjectPart
+        state: ordered
+        part:
+          id: 2
+        project:
+          id: 2
+    - !!models.ProjectPart
+        state: arrived
+        part:
+          id: 18
+        project:
+          id: 2
+    - !!models.ProjectPart
+        state: installed
+        part:
+          id: 14
+        project:
+          id: 2

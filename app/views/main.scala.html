@@ -6,19 +6,45 @@
     <head>
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap-theme.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/dashboard.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-        <script src="@routes.Assets.at("javascripts/jquery.js")" type="text/javascript"></script>
-        <script data-main="@routes.Assets.at("javascripts/main.js")" src="@routes.Assets.at("lib/requirejs/require.js")"></script>
     </head>
     <body>
-        <ul class="menu">
-            <li><a href="#/view1">view1</a></li>
-            <li><a href="#/view2">view2</a></li>
-        </ul>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">NitroCycles</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://stackoverflow.com/" target="_blank">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-        <div ng-view></div>
-
-        <div>Angular seed app: v<span app-version></span></div>
-
+        <div class="container-fluid" ng-app="NitroCyclesNg">
+            <div class="row">
+                <div class="col-sm-3 col-md-2 sidebar">
+                    <ul class="nav nav-sidebar">
+                        <li class="active"><a href="#/project/new">+ Add Project</a></li>
+                    </ul>
+                    <ul class="nav nav-sidebar" ng-controller="listProjectsController" ng-include src="'assets/partials/projects/list.html'" ></ul>
+                </div>
+                <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view>
+                </div>
+            </div>
+        </div>
     </body>
+    <script src="@routes.Assets.at("javascripts/lib/jquery.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/lib/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/lib/angular.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/lib/angular-route.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/lib/angular-resource.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/app/main.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/app/controllers/welcome.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/app/controllers/projects.js")" type="text/javascript"></script>
+    <script src="@routes.Assets.at("javascripts/app/controllers/parts.js")" type="text/javascript"></script>
 </html>
