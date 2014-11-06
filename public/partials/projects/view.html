@@ -1,0 +1,35 @@
+<h2>{{projectDetail.name}}</h2>
+<h4><b>Total:</b> ${{projectDetail.price.toFixed(2)}}</h4>
+<h4><b>Completed:</b> {{(projectDetail.completed * 100).toFixed(2)}}%</h4>
+<span class="btn btn-sm btn-success" ng-click="goToAddPart()">+ Add Part</span>
+<span class="btn btn-sm btn-warning" ng-click="goToEditProject()">Edit</span>
+<span class="btn btn-sm btn-danger" ng-click="deleteProject()">Delete</span>
+
+<div class="table-responsive" ng-if="projectPartsList.length > 0">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Vendor</th>
+                <th>Part Number</th>
+                <th>Price</th>
+                <th>State</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="project_part in projectPartsList">
+                <td>{{project_part.part.name}}</td>
+                <td><a href="{{project_part.part.vendor.url}}" target="_blank">{{project_part.part.vendor.name}}</a></td>
+                <td>{{project_part.part.part_number}}</td>
+                <td>${{project_part.part.price.toFixed(2)}}</td>
+                <td>
+                    <select id="project_part_state_{{project_part.id}}" ng-model="project_part.state" ng-change="changeState(project_part.id, project_part.part.id)">
+                        <option ng-repeat="state in project_part_states" value="{{state}}" ng-selected="project_part.state==state">{{state}}</option>
+                    </select>
+                </td>
+                <td><span class="btn btn-sm btn-danger" ng-click="deletePart(project_part.id)">Delete</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,11 @@
+<h2>New Project</h2>
+<form role="form">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" ng-model="newProject.name" placeholder="Enter the name of your new project..." ng-minlength="3" ng-maxlength="25" ng-required>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-default btn-primary" ng-click="submitProject()">Submit</button>
+        <button class="btn btn-default btn-danger" ng-click="cancelProject()">Cancel</button>
+    </div>
+</form>
