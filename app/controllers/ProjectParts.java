@@ -35,6 +35,13 @@ public class ProjectParts extends Controller {
     public static Result create() {
         ProjectPart project_part = Form.form(ProjectPart.class).bindFromRequest().get();
         project_part.save();
+
+        // update project price (denormalization example)
+        Project project = Project.find.byId(project_part.project.id);
+        project.updatePrice();
+        project.updateCompletion();
+        project.save();
+
         project_part = ProjectPart.find.byId(project_part.id);
         return ok(Json.toJson(project_part));
     }
@@ -47,13 +54,25 @@ public class ProjectParts extends Controller {
         } else {
             db_project_part.updateDetails(project_part);
             db_project_part.save();
+
+
+            Project project = Project.find.byId(project_part.project.id);
+            project.updateCompletion();
+            project.save();
+
             db_project_part = ProjectPart.find.byId(db_project_part.id);
             return ok(Json.toJson(db_project_part));
         }
     }
 
     public static Result delete(Integer id) {
-        ProjectPart.find.ref(id).delete();
+        ProjectPart project_part = ProjectPart.find.byId(id);
+        Project project = Project.find.byId(project_part.project.id);
+        project_part.delete();
+        project.updatePrice();
+        project.updateCompletion();
+        project.save();
+
         return ok();
     }
 
